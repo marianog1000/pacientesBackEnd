@@ -10,9 +10,14 @@ builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:3000") // Replace with your React app's URL
-                          .AllowAnyHeader()
-                          .AllowAnyMethod());
+
+             policy =>
+             {
+                 policy.WithOrigins("http://localhost:3000", 
+                                    "https://67afc5580f57c8a4225b5621--glittering-yeot-761ccf.netlify.app")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+             });
 });
 
 
