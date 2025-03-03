@@ -13,7 +13,8 @@ builder.Services.AddCors(options =>
 
              policy =>
              {
-                 policy.WithOrigins("http://localhost:3000", 
+                 policy.WithOrigins("http://localhost:3000",
+                                    "http://localhost:5173",
                                     "https://67afc5580f57c8a4225b5621--glittering-yeot-761ccf.netlify.app")
                        .AllowAnyMethod()
                        .AllowAnyHeader();
